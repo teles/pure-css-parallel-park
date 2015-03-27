@@ -3,7 +3,7 @@ Pure CSS - Parallel park is step by step tutorial on how to perfect parallel par
 
 ![image](http://s24.postimg.org/iqjkl0mwz/parallel_park_gif.gif)
 
-[Click here to see a live demo](teles.github.io/pure-css-parallel-park/) or love it on [codepen](codepen.io/teles/pen/gbKeLR).
+[Click here to see a live demo](http://teles.github.io/pure-css-parallel-park/) or love it on [codepen](http://codepen.io/teles/pen/gbKeLR).
 
 ## Dependences
 To generate the css file from the sass code you will only need compass. If you don't have it, [install it](http://compass-style.org/install/)
