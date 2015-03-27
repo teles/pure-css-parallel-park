@@ -1,0 +1,44 @@
+.park
+  background-color: hsl(0, 8%, 85)    
+  padding: $padding-park
+  position: relative  
+  border-top: 2px solid #fff
+  @include box-shadow(0px -20px 0px #c4baba)
+  margin-top: 50px
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    height: 100%
+    border-left: 2px dashed #fff
+    width: 2px
+    top: 0px
+  &:before  
+    left: $width-car + $padding-park + 10px
+  &:after  
+    left: $width-car * 2 + $padding-park * 2 + $margin-left-car
+
+// --------------------------------------- |
+// Linha de carros estacionados -----------|  
+.car-line
+  + .car-line
+    margin-top: 40px
+
+// --------------------------------------- |
+// Espaço - vaga para estacionar ----------|  
+.vacancy
+  width: $width-car
+  height: $height-car
+  @include inline-block
+  font-size: 31px
+  text-align: center
+  line-height: 1.5
+  color: #333  
+  @include box-sizing(border-box)
+  padding: 10px
+  &:before
+    content: "You are going to park here!"
+  &:hover:before
+    content: "Don't you believe? Click to start."
+  + .car
+    margin-left: $margin-left-car

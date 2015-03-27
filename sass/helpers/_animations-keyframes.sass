@@ -1,0 +1,39 @@
+// Animations keyframes
+// Step by step animation keyframes
+
+// PASSO 1 - START
+@include keyframes(animacao-passo1)
+  from
+    left: 0
+  to
+    left: $margin-left-passo1 + 10px    
+
+// PASSO 2 - STEP 2
+@include keyframes(animacao-passo2)
+  from
+    @include rotate(0)    
+    left: $margin-left-passo1 + 10px        
+  to 
+    @include transform-origin(top, left)    
+    @include rotate(.1turn)
+    left: $margin-left-passo1 - 10px  
+
+// PASSO 3 - STEP 3
+@include keyframes(animacao-passo3)
+  from
+    left: $margin-left-passo1 - 10px        
+    top: 0
+  to
+    left: 470px
+    top: -183px  
+
+// PASSO 4 - FINISH
+@include keyframes(animacao-passo4)
+  from
+    left: 470px
+    top: -183px          
+    @include rotate(.1turn)  
+  to
+    left: 345px
+    top: -183px
+    @include rotate(0deg)

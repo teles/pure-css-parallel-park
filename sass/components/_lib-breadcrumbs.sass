@@ -1,0 +1,84 @@
+// STEPS BREADCRUMBS
+
+// I get this from this pen: 
+// http://codepen.io/arkev/pen/DzCKF from the user @arkev
+
+.breadcrumbs
+  @include inline-block
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.35)
+  overflow: hidden
+  border-radius: 5px
+  counter-reset: flag
+  position: absolute
+  bottom: 25px
+  left: calc(50% - 200px)
+  color: #34495e
+
+  > label
+    text-decoration: none
+    outline: none
+    display: block
+    float: left
+    font-size: 12px
+    line-height: 36px
+    padding: 0 10px 0 60px
+    position: relative
+    cursor: pointer   
+
+    &:first-child
+      padding-left: 46px
+      border-radius: 5px 0 0 5px
+      &:before
+        left: 14px
+
+    &:last-child
+      border-radius: 0 5px 5px 0
+      padding-right: 20px
+
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      right: -18px
+      width: 36px
+      height: 36px
+      transform: scale(0.707) rotate(45deg)
+      z-index: 1
+      box-shadow: 2px -2px 0 2px hsl(0, 8%, 90%)
+      border-radius: 0 5px 0 50px
+
+    &:last-child:after
+      content: none
+
+    &:before
+      content: counter(flag)
+      counter-increment: flag
+      border-radius: 100%
+      width: 20px
+      height: 20px
+      line-height: 20px
+      margin: 8px 0
+      position: absolute
+      top: 0
+      left: 30px
+      background: #444
+      font-weight: bold
+      text-align: center
+      color: $color-glasses
+
+  &.breadcrumbs-flat
+    > label
+      background: white
+      color: black
+      transition: all 0.5s
+      &:after
+        background: white
+        color: black
+        transition: all 0.5s
+      &:before
+        background: white
+        box-shadow: 0 0 0 1px #ccc
+      &:hover, 
+      &:hover:after
+        background-color: $color-glasses
+        color: #fff

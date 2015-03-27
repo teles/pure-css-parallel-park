@@ -1,0 +1,60 @@
+// Typography
+
+// Importing google fonts
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700)
+@import url(http://fonts.googleapis.com/css?family=Lato)
+
+// Main title and subtitle of the application
+header
+  h1
+    font-family: Montserrat, 'sans-serif'
+    font-size: 45px    
+    text-align: center
+    color: #34495e
+    .header-subtitile
+      font-size: .35em
+      margin-bottom: 5px
+      position: relative
+      &:before,
+      &:after
+        content: ''
+        position: absolute
+        width: 25%
+        height: 2px
+        top: 50%
+        margin-top: -1px
+        background-color: #34495e
+      &:before      
+        left: -35%
+      &:after
+        right: -35%
+    .header-title        
+      margin-top: 0
+
+// CONGRATULATIONS STYLE
+// Use for the congratulations message
+.congrats
+  @include opacity(0)
+  
+  bottom: 140px
+  position: absolute 
+  visibility: hidden
+  width: 100%
+  color: #34495e
+  
+  .congrats-title,
+  .congrats-subtitle,
+  .congrats-text
+    margin: 0
+    line-height: 1.5
+    text-align: center
+  
+  .congrats-title
+    font-size: 42px
+  
+  .congrats-subtitle
+    font-size: 22px
+  
+  .congrats-link
+    color: $color-car-blue
+    text-decoration: none        

@@ -1,0 +1,37 @@
+// Animation steps 
+
+// Start
+.passo1:checked + .passo2:not(:checked)
+  ~ .car
+    @include animation(animacao-passo1 3s ease-in-out)
+    
+.passo1:checked + .passo2 
+  ~ .car
+    left: $margin-left-passo1 + 10px
+      
+// Step 2
+.passo1:checked + .passo2:checked + .passo3:not(:checked)
+  ~ .car
+    @include animation(animacao-passo2 3s)
+
+.passo1:checked + .passo2:checked + .passo3
+  ~ .car            
+    @include transform-origin(top, left)        
+    @include rotate(.1turn)
+    left: $margin-left-passo1 - 10px
+      
+
+// Step 3      
+.passo1:checked + .passo2:checked + .passo3:checked
+  ~ .car
+    @include animation(animacao-passo3 3s ease-out)
+    left: 470px
+    top: -183px        
+
+// Finish
+.passo2:checked + .passo3:checked
+  + .passo4:checked ~ .car
+    @include animation(animacao-passo4 3s)
+    left: 345px
+    top: -183px
+    @include rotate(0deg)

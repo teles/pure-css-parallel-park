@@ -1,0 +1,44 @@
+// ------------------------------------------ |
+// Extends - placeholder                      |
+// Estilos comuns para elementos simétricos   |
+// -------------------------------------------|
+
+// retrovisores
+%commons-retrovisor
+  content: ''
+  width: 12px
+  height: 12px
+  background-color: inherit    
+  right: 80px
+  position: absolute  
+
+// farois  
+%commons-farol
+  content: ''
+  width: 20px
+  height: 10px
+  background-color: yellow
+  position: absolute      
+  top: 70px
+  @include border-radius(50%)
+
+// vidro laterais  
+%commons-vidro-lateral
+  content: ''
+  display: block
+  border-bottom: 10px solid $color-glasses
+  border-left: 30px solid transparent
+  border-right: 40px solid transparent
+  height: 10px
+  width: 130px
+  position: absolute
+  right: 52px
+
+// luzes de ré  
+%commons-luz-de-re
+  content:  ''
+  width: 23px
+  height: 12px
+  background-color: #D92626
+  position: absolute    
+  bottom: -62px   

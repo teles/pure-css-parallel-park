@@ -1,0 +1,106 @@
+// --------------------------------------- |
+// Carro ----------------------------------|  
+// --------------------------------------- |
+.car
+  width: $width-car
+  height: $height-car
+  background: $color-car
+  position: relative    
+  @include inline-block
+  @include border-top-right-radius(40px 50%)
+  @include border-bottom-right-radius(40px 50%)    
+  @include border-bottom-left-radius(20px 30px)
+  @include border-top-left-radius(20px 30px) 
+
+  &:after   
+    @extend %commons-retrovisor
+    top: -12px
+    @include border-radius(3px 100% 0 0)
+  &:before
+    @extend %commons-retrovisor
+    bottom: -12px
+    @include border-radius(0 0 100% 3px) 
+
+  // Parte frontal do carro
+  // Vidro frontal
+  .car-front
+    border-bottom: 40px solid $color-glasses
+    border-left: 8px solid transparent
+    border-right: 8px solid transparent
+    top: 42px
+    height: 0
+    width: 70px
+    right: 30px
+    position: absolute
+    @include rotate(-90deg)
+    @include box-shadow(0px 3px 0 #fff)
+
+    // Faróis
+
+    // farol esquerdo
+    &:after
+      @extend %commons-farol
+      @include rotate(22deg)
+      left: -5px
+
+    // farol direito
+    &:before     
+      @extend %commons-farol
+      @include rotate(-22deg)
+      right: -5px      
+
+  // Outras cores para o carro
+  &.car-blue
+    background-color: $color-car-blue
+  &.car-red
+    background-color: $color-car-red
+  &.car-silver
+    background-color: $color-car-silver      
+
+  // Espaçamento entre carros    
+  + .car, 
+  + .vacancy
+    margin-left: $margin-left-car
+  
+  // Meio do carro
+
+  // Vidros laterais 
+  .car-middle
+
+    // vidro lateral direito
+    &:before
+      @extend %commons-vidro-lateral
+      bottom: 8px
+
+    // vidro lateral esquerdo
+    &:after
+      @extend %commons-vidro-lateral
+      top: 8px
+      @include scale(1, -1)
+
+  // Parte traseira do carro    
+  .car-back
+    content: ''
+    border-bottom: 35px solid $color-glasses
+    border-left: 20px solid transparent
+    border-right: 20px solid transparent
+    height: 0
+    top: 44px
+    width: 60px  
+    left: -5px
+    @include rotate(90deg)  
+    position: absolute
+
+    // Luzes de ré
+
+    // luz de ré esquerda
+    &:before
+      @extend %commons-luz-de-re
+      left: -30px        
+      @include border-bottom-left-radius(40px 22px)     
+    &:after  
+
+      // luz de ré direita
+      @extend %commons-luz-de-re
+      right: -30px  
+      @include border-bottom-right-radius(40px 22px)   

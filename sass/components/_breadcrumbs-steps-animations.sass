@@ -1,0 +1,86 @@
+// Breadcrumb animations
+// Animate specific breadcrumbs when the steps are changing.
+
+// Extends for breadcrumbs
+
+// checkable step state
+%commons-checkable-step
+  pointer-events: all
+  @include opacity(1)  
+
+// checked step state
+%commons-checked-step
+  background-color: $color-glasses
+  color: #fff
+
+// non checkable step state
+%commons-non-checkable-step  
+  pointer-events: none
+  @include opacity(.2)
+
+// initial state for the breadcrumbs 
+.passo2-label,
+.passo3-label,
+.passo4-label  
+  @extend %commons-non-checkable-step
+
+// Keyframes for breadcrumbs
+@include keyframes(animacao-check-step)      
+  0%, 80%
+    pointer-events: none
+    @include opacity(.2)    
+  100%
+    pointer-events: all
+    @include opacity(1)
+
+@include keyframes(show-congrats)    
+  0%, 50%
+    @include opacity(0)
+  100%
+    @include opacity(100)
+
+// Step by step breadcrumbs
+// step 1 checked
+input.passo1:checked
+  @extend %commons-checked-step
+  ~ .breadcrumbs
+    > .passo1-label, 
+    > .passo1-label:after           
+      @extend %commons-checked-step
+    > .passo2-label
+      @include animation(animacao-check-step 3.2s)
+      @extend %commons-checkable-step        
+  
+  // step 1 and 2 checked
+  + input.passo2:checked    
+    ~ .breadcrumbs
+      > .passo2-label, 
+      > .passo2-label:after           
+        @extend %commons-checked-step      
+      > .passo3-label
+        @include animation(animacao-check-step 3.2s)
+        @extend %commons-checkable-step
+  
+    // step 1, 2 and 3 checked        
+    + input.passo3:checked
+      ~ .breadcrumbs
+        > .passo3-label, 
+        > .passo3-label:after           
+          @extend %commons-checked-step            
+        > .passo4-label
+          @include animation(animacao-check-step 3.2s)
+          @extend %commons-checkable-step
+  
+      // step 1, 2, 3 and 4 checked                  
+      + input.passo4:checked
+        ~ .breadcrumbs
+          > .passo4-label, 
+          > .passo4-label:after           
+            @include animation(animacao-check-step 3.2s)
+            @extend %commons-checked-step                  
+        
+        // When all the steps are checked show the congratulations message
+        ~ .congrats
+          @include animation(show-congrats 4.4s)  
+          visibility: visible
+          @include opacity(1)
