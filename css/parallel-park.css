@@ -627,7 +627,7 @@ header h1 .header-title {
 }
 /* line 41, ../sass/components/_park.sass */
 .vacancy:hover:before {
-  content: "Don't you believe? Click to start.";
+  content: "Click the button below to start.";
 }
 /* line 43, ../sass/components/_park.sass */
 .vacancy + .car {
