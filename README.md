@@ -1,7 +1,7 @@
 # Pure CSS - Parallel park
 Pure CSS - Parallel park is step by step tutorial on how to perfect parallel park.
 
-![image](http://s24.postimg.org/iqjkl0mwz/parallel_park_gif.gif)
+![Exhibition](https://raw.githubusercontent.com/teles/pure-css-parallel-park/gh-pages/exhibition.gif)
 
 [Click here to see a live demo](http://teles.github.io/pure-css-parallel-park/) or love it on [codepen](http://codepen.io/teles/pen/gbKeLR).
 
